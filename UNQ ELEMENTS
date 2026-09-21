@@ -1,0 +1,27 @@
+#include <stdio.h>
+void printUniqueElements(int arr[], int size) {
+    printf("The unique elements in the array are: ");
+    for (int i = 0; i < size; i++) {
+        int count = 0;
+        for (int j = 0; j < size; j++) {
+            if (arr[i] == arr[j]) {
+                count++;
+            }
+        }
+        if (count == 1) {
+            printf("%d ", arr[i]);
+        }
+    }
+    printf("\n");
+}
+int main() {
+    int arr[] = {4, 5, 4, 7, 8, 5, 2, 9};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    printf("Original Array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    printUniqueElements(arr, size);
+    return 0;
+}
