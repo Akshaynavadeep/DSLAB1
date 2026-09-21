@@ -1,0 +1,23 @@
+#include <stdio.h>
+int findFirstRepeated(int arr[], int size) {
+for (int i = 0; i < size; i++) {
+for (int j = i + 1; j < size; j++) {
+if (arr[i] == arr[j]) {
+return arr[i];
+}
+}
+}
+return -1; 
+}
+int main() {
+int arr[] = {10, 5, 3, 4, 3, 5, 6};
+int size = sizeof(arr) / sizeof(arr[0]);
+int result = findFirstRepeated(arr, size);
+if (result != -1) {
+printf("The first repeated element is: %d\n", result);
+} else {
+printf("No repeated elements found.\n");
+}
+
+return 0;
+}
