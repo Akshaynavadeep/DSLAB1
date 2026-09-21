@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int findMostRepeated(int arr[], int size) {
+    int maxCount = 0;
+    int mostRepeatedElement = arr[0];
+    for (int i = 0; i < size; i++) {
+        int currentCount = 0;
+        for (int j = 0; j < size; j++) {
+            if (arr[i] == arr[j]) {
+                currentCount++;
+            }
+        }
+        if (currentCount > maxCount) {
+            maxCount = currentCount;
+            mostRepeatedElement = arr[i];
+        }
+    }
+
+    return mostRepeatedElement;
+}
+
+int main() {
+    int arr[] = {4, 2, 7, 4, 7, 5, 7, 4, 7, 6};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    printf("The original array is: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    int result = findMostRepeated(arr, size);
+    printf("The most repeated number is: %d\n", result);
+    return 0;
+}
